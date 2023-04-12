@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/WidgetManager")
+@RequestMapping("/accolite/WidgetManager")
+//@CrossOrigin(origins = "http://localhost:4200/")
 public class WidgetManagerController {
    @Autowired
    private WidgetManagerService widgetManagerService;
@@ -29,9 +30,8 @@ public class WidgetManagerController {
    }
 
    @DeleteMapping("/widget/{id}")
-   public String deleteWidgetById(@PathVariable("id") Long id){
+   public void deleteWidgetById(@PathVariable("id") Long id){
       widgetManagerService.deleteWidgetById(id);
-      return "Field Deleted successfully";
    }
 
    @PutMapping("/widget/{id}")
