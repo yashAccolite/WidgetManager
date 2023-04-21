@@ -1,24 +1,20 @@
 package com.example.WidgetManager.service;
 
+import com.example.WidgetManager.exception.NoSuchElementFoundException;
 import com.example.WidgetManager.model.WidgetManager;
+
 import java.util.List;
+import java.util.UUID;
 
 public interface WidgetManagerService {
-        WidgetManager saveWidgetData(WidgetManager widgetManager);
+    WidgetManager saveWidgetData(WidgetManager widgetManager);
 
-        List<WidgetManager> fetchWidgetData();
+    List<WidgetManager> fetchWidgetData();
 
-        WidgetManager fetchWidgetById(Long id);
+    WidgetManager fetchWidgetById(UUID id) throws NoSuchElementFoundException;
 
-    void deleteWidgetById(Long id);
+    void deleteWidgetById(UUID id) throws NoSuchElementFoundException;
 
-    WidgetManager updateWidget(Long id, WidgetManager widgetManager);
+    WidgetManager updateWidget(UUID id, WidgetManager widgetManager) throws NoSuchElementFoundException;
 
-    List<WidgetManager> fetchWidgetBySize(String size);
-
-    List<WidgetManager> fetchWidgetByName(String name);
-
-    List<WidgetManager> fetchWidgetByTag(String tag);
-
-    List<WidgetManager> fetchWidgetByStatus(String status);
 }

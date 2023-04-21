@@ -5,15 +5,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Repository
-public interface WidgetManagerRepo extends JpaRepository<WidgetManager, Long> {
-
-    public List<WidgetManager> findAllByWidgetSize(String WidgetSize);
-    public List<WidgetManager> findALlByWidgetNameIgnoreCase(String name);
-
-    public List<WidgetManager> findAllByWidgetStatusIgnoreCase(String status);
-    public List<WidgetManager> findAllByWidgetTagIgnoreCase(String tag);
+public interface WidgetManagerRepo extends JpaRepository<WidgetManager, UUID> {
 
 
 }
